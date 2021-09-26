@@ -74,7 +74,8 @@ melb_preds = forest_model.predict(val_X)
 print(mean_absolute_error(val_y, melb_preds))
 
 # Train a model for the competition¶
-# To improve accuracy, create a new Random Forest model which you will train on all training data
+# To improve accuracy, create a new Random Forest model
+#  which you will train on all training data
 forest_model_on_full_data = RandomForestRegressor(random_state=1)
 # fit forest_model_on_full_data on all data from the training data
 forest_model_on_full_data.fit(X, y)
@@ -82,8 +83,8 @@ forest_model_on_full_data.fit(X, y)
 test_data_path = 'Kaggle_Courses/melbourne-housing-snapshot/melb_data.csv'
 # read test data file using pandas
 test_data = pd.read_csv(test_data_path)
-# create test_X which comes from test_data but includes only the columns you used for prediction.
-# The list of columns is stored in a variable called features
+# create test_X which comes from test_data,
+# but includes only the columns you used for prediction.
 test_X = test_data[melbourne_features]
 # make predictions which we will submit.
 test_preds = forest_model_on_full_data.predict(test_X)
