@@ -28,7 +28,7 @@ wine_reviews = pd.read_csv(
 # (instead of creating a new one from scratch),
 wine_reviews = pd.read_csv(
     "Kaggle_Courses/wine-reviews/winemag-data-130k-v2.csv", index_col=0)
-"""
+
 # use the shape attribute to check how large the resulting DataFrame is:
 wine_reviews.shape
 # using the head() command, which grabs the first five rows of the DataFrame:
@@ -162,7 +162,7 @@ print(countries_reviewed.sort_index())
 
 # sort by more than one column at a time
 print(countries_reviewed.sort_values(by=['country', 'len']))
-"""
+
 # Data Types and Missing Values
 # The data type for a column in a DataFrame or a Series is known as the dtype.
 print(wine_reviews.price.dtype)
