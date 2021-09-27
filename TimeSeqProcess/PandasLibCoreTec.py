@@ -57,9 +57,11 @@ plt.show()
 # 移动时间窗口.rolling()
 # 可用于连续观测指定大小的时间窗口内数据的统计值
 rolling = tencent.rolling(365)
-data = pd.DataFrame({'original': tencent,
-                     'rolling-mean': rolling.mean(),
-                     'rolling-std': rolling.std()})
+data = pd.DataFrame({
+    'original': tencent,
+    'rolling-mean': rolling.mean(),
+    'rolling-std': rolling.std()
+})
 
-data.plot(style=['-','--',':'])
+data.plot(style=['-', '--', ':'])
 plt.show()
