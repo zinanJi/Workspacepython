@@ -73,6 +73,7 @@ forest_model.fit(train_X, train_y)
 melb_preds = forest_model.predict(val_X)
 print(mean_absolute_error(val_y, melb_preds))
 
+'''
 # Train a model for the competition¶
 # To improve accuracy, create a new Random Forest model
 #  which you will train on all training data
@@ -91,3 +92,4 @@ test_preds = forest_model_on_full_data.predict(test_X)
 
 output = pd.DataFrame({'Id': test_data.Id, 'SalePrice': test_preds})
 output.to_csv('submission.csv', index=False)
+'''
