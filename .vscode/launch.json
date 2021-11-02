@@ -10,7 +10,9 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "stopOnEntry": false
+            "stopOnEntry": false,
+            "python.pythonPath":"C:/ProgramData/Anaconda3/python.exe",
+            "python.defaultInterpreterPath":"C:/ProgramData/Anaconda3/python.exe"
         }
     ]
 }
