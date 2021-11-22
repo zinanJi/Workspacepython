@@ -3,7 +3,6 @@ import collections
 
 class Solution:
     def containsDuplicate(self, nums):
-        
         # 1.
         # return len(list(set(nums)))<len(nums)
 
