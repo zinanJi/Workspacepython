@@ -24,7 +24,7 @@ momentum = 0.5
 # 下载数据并进行预处理
 # transforms.Compose可以把转换函数组合起来
 # transforms.Normalize([0.5], [0.5]) 对张量归一化，均值和方差都为0.5
-# 图像是灰色，只有一个通道。多个通道需要多个数字，如Normalize([m1,m2,m3], [n1,n2,n3]
+# 图像是灰色，只有一个通道。多个通道需要多个数字，如Normalize([m1,m2,m3], [n1,n2,n3])
 transform = transforms.Compose(
     [transforms.ToTensor(),
      transforms.Normalize([0.5], [0.5])])
