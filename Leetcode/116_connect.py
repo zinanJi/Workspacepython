@@ -1,13 +1,5 @@
 import collections
-
-
-# Definition for a Node.
-class Node(object):
-    def __init__(self, val=0, left=None, right=None, next=None):
-        self.val = val
-        self.left = left
-        self.right = right
-        self.next = next
+import makeTree
 
 
 class Solution(object):
@@ -16,7 +8,6 @@ class Solution(object):
         :type root: Node
         :rtype: Node
         """
-        
         # 层次遍历
         if not root:
             return root
@@ -25,14 +16,15 @@ class Solution(object):
             size = len(queue)
             for i in range(size):
                 node = queue.popleft()
+                # 关键步骤：pop之后队列头部即为该层取出节点的下一个节点（最后为null？），赋值给node.next
                 if i < size - 1:
                     node.next = queue[0]
+
                 if node.left:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
         return root
-        
         """
         if not root:
             return root
@@ -52,3 +44,8 @@ class Solution(object):
             leftmost = leftmost.left
         return root
         """
+
+
+list = [1, 2, 3, 4, 5, 'null', 7]
+root = makeTree.Node.generate(list=list)
+print(makeTree.Node.levelOrderPrintNext(Solution().connect(root)))

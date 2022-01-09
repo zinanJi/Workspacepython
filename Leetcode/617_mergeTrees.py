@@ -1,12 +1,5 @@
 import collections
-
-
-# Definition for a binary tree node.
-class TreeNode(object):
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+import makeTree
 
 
 class Solution(object):
@@ -21,7 +14,7 @@ class Solution(object):
         if not root2:
             return root1
 
-        merged = TreeNode(root1.val + root2.val)
+        merged = makeTree.Node(root1.val + root2.val)
         queue = collections.deque([merged])
         queue1 = collections.deque([root1])
         queue2 = collections.deque([root2])
@@ -34,7 +27,7 @@ class Solution(object):
             left2, right2 = node2.left, node2.right
             if left1 or left2:
                 if left1 and left2:
-                    left = TreeNode(left1.val + left2.val)
+                    left = makeTree.Node(left1.val + left2.val)
                     node.left = left
                     queue.append(left)
                     queue1.append(left1)
@@ -46,7 +39,7 @@ class Solution(object):
 
             if right1 or right2:
                 if right1 and right2:
-                    right = TreeNode(right1.val + right2.val)
+                    right = makeTree.Node(right1.val + right2.val)
                     node.right = right
                     queue.append(right)
                     queue1.append(right1)
