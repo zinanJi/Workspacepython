@@ -5,14 +5,21 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch stream",
+            "request": "launch",
+            "mainClass": "stream",
+            "projectName": "Workspacepython_78e72e6e"
+        },
+        {
             "name": "Python: 当前文件",
             "type": "python",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
             "stopOnEntry": false,
-            "python.pythonPath":"C:/ProgramData/Anaconda3/python.exe",
-            "python.defaultInterpreterPath":"C:/ProgramData/Anaconda3/python.exe"
+            "python.pythonPath": "C:/ProgramData/Anaconda3/python.exe",
+            "python.defaultInterpreterPath": "C:/ProgramData/Anaconda3/python.exe"
         }
     ]
 }

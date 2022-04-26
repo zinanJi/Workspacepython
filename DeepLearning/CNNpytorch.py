@@ -46,7 +46,7 @@ def imshow(img):
     img = img / 2 + 0.5
     npimg = img.numpy()
     plt.imshow(np.transpose(npimg, (1, 2, 0)))
-    plt.show()\
+    plt.show()
 
 
 """
@@ -83,8 +83,9 @@ class CNNNet(nn.Module):
 
 
 if __name__ == '__main__':
-    device = torch.device("cpu")
-    net = CNNNet()
+    
+    device = torch.device("cuda:0")
+    net = CNNNet().to(device)
     print(net)
     nn.Sequential(*list(net.children())[:4])
 
@@ -95,6 +96,10 @@ if __name__ == '__main__':
         running_loss = 0.0
         for i, data in enumerate(trainloader, 0):
             inputs, labels = data
+            print("input:")
+            print(input)
+            print("labels:")
+            print(labels)
             inputs, labels = inputs.to(device), labels.to(device)
             optimizer.zero_grad()
             outputs = net(inputs)
