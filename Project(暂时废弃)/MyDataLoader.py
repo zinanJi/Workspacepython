@@ -21,7 +21,7 @@ class MyData(Dataset):
         self.transform = transform
         # self.dataName = os.listdir(self.root_dir)
         self.data = pd.read_csv(csv_file, header=0).reset_index()
-        
+
         self.data['SJSJ'] = pd.to_datetime(self.data.SJSJ)
         self.data['SJSJ'] = self.data['SJSJ'].apply(
             lambda x: x.strftime('%Y%m%d'))
@@ -33,9 +33,9 @@ class MyData(Dataset):
         min_value = self.data.min()
         # print(max_value)
         # print(min_value)
-        self.data = (self.data- min_value) / (max_value - min_value + 1e-6)
+        self.data = (self.data - min_value) / (max_value - min_value + 1e-6)
         print(self.data)
-        
+
     def __len__(self):
         return len(self.data)
 
@@ -64,5 +64,5 @@ if __name__ == '__main__':
         print(batch_data.shape)
         print(batch_data)
  """
-        
-print("finished loading")        
+
+print("finished loading")

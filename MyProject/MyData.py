@@ -28,7 +28,7 @@ class Mydata(Dataset):  # 继承torch.utils.data.Dataset
         # 处理后的源数据结构应该是(data, CLD_index, seq_len, n_feature) todo
         # header = 0 首行为列名
 
-        # 待废弃：把SJSJ临时处理成int
+        # 待废弃：把SJSJ临时处理成float
         self.data['SJSJ'] = pd.to_datetime(self.data.SJSJ)
         self.data['SJSJ'] = self.data['SJSJ'].apply(
             lambda x: x.strftime('%Y%m%d'))
