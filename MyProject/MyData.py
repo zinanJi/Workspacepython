@@ -8,7 +8,7 @@ import pandas as pd
 import torch
 import numpy as np
 
-seq_len = 1
+seq_len = 640
 
 # 定义dataset类才能创建dataset对象
 # 至少包含3个函数：
@@ -17,7 +17,7 @@ seq_len = 1
 # __getitem__:返回一条训练数据，并将其转化为Tensor
 
 
-class Mydata(Dataset):  # 继承torch.utils.data.Dataset
+class MyDataSet(Dataset):  # 继承torch.utils.data.Dataset
     # 重构__init__
     # 定义参数csv_file, 创建对象的时候传入文件路径
     # 可定义参数flag，创建对象的时候区分训练集、测试集、验证集  assert flag in ['train', 'test', 'valid']
@@ -67,12 +67,11 @@ if __name__ == '__main__':
     ds = Mydata('./Project/data9.csv')
 
     dataloader = DataLoader(ds,
-                            batch_size=1,
+                            batch_size=2,
                             shuffle=False,)
     for i_batch, batch_data in enumerate(dataloader):
         if i_batch == 1:
             print(i_batch)
             print(batch_data.shape)
             print(batch_data)
-
-print("finished loading")
+    print("finished loading")
